@@ -5,9 +5,8 @@ import lombok.Data;
 
 @Data
 @Builder
-public class UserModel {
+public class AccountModel {
 
-  private String id;
-  private String name;
-  private String email;
+  private double balance;
+  private double credit;
 }
