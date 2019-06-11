@@ -1,5 +1,4 @@
-package com.rflpazini.rogue.entrypoint.account;
-
+package com.rflpazini.rogue.entrypoint;
 
 import javax.inject.Singleton;
 import javax.ws.rs.GET;
@@ -20,5 +19,4 @@ public class AccountController {
 
     return Response.ok().build();
   }
-
 }

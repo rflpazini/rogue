@@ -1,6 +1,6 @@
 package com.rflpazini.rogue.dataprovider;
 
-import java.util.Collection;
+import com.rflpazini.rogue.dataprovider.model.*;
 import java.util.Hashtable;
 import java.util.UUID;
 import org.slf4j.Logger;
@@ -11,24 +11,13 @@ public enum DataBase {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(DataBase.class);
 
-  private final Hashtable<UUID, String> db;
+  private final Hashtable<UUID, UserModel> user;
 
   private DataBase() {
-    db = new Hashtable<>();
+    user = new Hashtable<>();
   }
 
-  public final String getUserById(String enumType) {
-    LOGGER.info("getUserById");
-    return db.get(enumType);
-  }
-
-  public final Collection<String> getAllRegistries() {
-    LOGGER.info("getAllRegistries");
-    return db.values();
-  }
-
-  public final void add(String newData) {
-    LOGGER.info("add newData");
-    db.put(UUID.randomUUID(), newData);
+  public Hashtable user(){
+    return user;
   }
 }
