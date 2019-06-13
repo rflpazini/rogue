@@ -1,6 +1,6 @@
 package com.rflpazini.rogue.app.entrypoint;
 
-import com.rflpazini.rogue.app.dataprovider.model.Customer;
+import com.rflpazini.rogue.app.entrypoint.model.Customer;
 import com.rflpazini.rogue.domain.usecase.CustomerService;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -35,7 +35,7 @@ public class CustomerController {
   @POST
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.APPLICATION_JSON)
-  public Response createCustumer(Customer customer) throws URISyntaxException {
+  public Response createCustomer(Customer customer) throws URISyntaxException {
     Customer newCustomer = service.saveCustomer(customer);
 
     URI location = new URI("http://localhost:8181/rogue/v1/customer/" + newCustomer.getAccountId());

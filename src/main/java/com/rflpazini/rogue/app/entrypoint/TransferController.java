@@ -1,6 +1,6 @@
 package com.rflpazini.rogue.app.entrypoint;
 
-import com.rflpazini.rogue.app.dataprovider.model.Transfer;
+import com.rflpazini.rogue.app.entrypoint.model.Transfer;
 import com.rflpazini.rogue.domain.usecase.TransferService;
 import java.net.URI;
 import java.net.URISyntaxException;

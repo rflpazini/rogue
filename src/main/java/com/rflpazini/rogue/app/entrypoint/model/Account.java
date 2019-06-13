@@ -1,4 +1,4 @@
-package com.rflpazini.rogue.app.dataprovider.model;
+package com.rflpazini.rogue.app.entrypoint.model;
 
 import java.time.LocalDateTime;
 import lombok.Builder;

@@ -1,8 +1,8 @@
 package com.rflpazini.rogue.domain.usecase;
 
-import com.rflpazini.rogue.app.dataprovider.impl.TransferRepository;
-import com.rflpazini.rogue.app.dataprovider.model.Transfer;
-import com.rflpazini.rogue.app.dataprovider.queue.TransferQueueProducer;
+import com.rflpazini.rogue.app.entrypoint.model.Transfer;
+import com.rflpazini.rogue.domain.dataprovider.CrudPattern;
+import com.rflpazini.rogue.domain.dataprovider.QueueProvider;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -10,10 +10,10 @@ import javax.inject.Inject;
 
 public class TransferService {
 
-  @Inject AccountService accountService;
-  @Inject TransferRepository repository;
+  @Inject private AccountService accountService;
+  @Inject private CrudPattern<Transfer> repository;
 
-  @Inject TransferQueueProducer transferQueueProducer;
+  @Inject private QueueProvider<Transfer> transferQueueProducer;
 
   public Transfer createTransfer(Transfer entity) {
     accountService.withdraw(entity.getOriginAccount(), entity.getAmount());
@@ -42,12 +42,8 @@ public class TransferService {
     newTransfer.setId(UUID.randomUUID().toString());
     newTransfer.setCreatedAt(LocalDateTime.now());
 
-    transferQueueProducer.post(entity);
+    transferQueueProducer.post(newTransfer);
 
-    return repository.save(entity);
-  }
-
-  private void persistNewEntry(final Transfer entity) {
-    repository.save(entity);
+    return repository.save(newTransfer);
   }
 }

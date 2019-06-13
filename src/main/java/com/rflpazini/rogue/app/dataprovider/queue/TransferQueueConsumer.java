@@ -1,6 +1,6 @@
 package com.rflpazini.rogue.app.dataprovider.queue;
 
-import com.rflpazini.rogue.app.dataprovider.model.Transfer;
+import com.rflpazini.rogue.app.entrypoint.model.Transfer;
 import com.rflpazini.rogue.domain.usecase.TransferService;
 import javax.ejb.MessageDriven;
 import javax.inject.Inject;

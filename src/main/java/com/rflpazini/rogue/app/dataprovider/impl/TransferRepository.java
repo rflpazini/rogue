@@ -1,8 +1,8 @@
 package com.rflpazini.rogue.app.dataprovider.impl;
 
-import com.rflpazini.rogue.app.dataprovider.model.Transfer;
-import com.rflpazini.rogue.app.dataprovider.CrudPattern;
 import com.rflpazini.rogue.app.dataprovider.DataBase;
+import com.rflpazini.rogue.app.entrypoint.model.Transfer;
+import com.rflpazini.rogue.domain.dataprovider.CrudPattern;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -20,8 +20,6 @@ public class TransferRepository implements CrudPattern<Transfer> {
     entity.setCreatedAt(LocalDateTime.now());
 
     TRANSFER.put(id, entity);
-
-    System.out.println("save...");
 
     return TRANSFER.get(id);
   }

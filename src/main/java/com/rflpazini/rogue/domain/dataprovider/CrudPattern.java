@@ -1,4 +1,4 @@
-package com.rflpazini.rogue.app.dataprovider;
+package com.rflpazini.rogue.domain.dataprovider;
 
 import java.util.List;
 

@@ -1,6 +1,7 @@
 package com.rflpazini.rogue.app.dataprovider.queue;
 
-import com.rflpazini.rogue.app.dataprovider.model.Transfer;
+import com.rflpazini.rogue.app.entrypoint.model.Transfer;
+import com.rflpazini.rogue.domain.dataprovider.QueueProvider;
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
 import javax.jms.Connection;
@@ -14,7 +15,7 @@ import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 
 @Stateless
-public class TransferQueueProducer {
+public class TransferQueueProducer implements QueueProvider<Transfer> {
 
   @Resource(lookup = "jms/JmsFactory")
   private ConnectionFactory jmsFactory;
@@ -27,9 +28,7 @@ public class TransferQueueProducer {
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
         MessageProducer producer = session.createProducer(jmsQueue)) {
 
-      System.out.println("Sending a new message");
       TextMessage message = session.createTextMessage(convertTransferToJson(transfer));
-      System.out.println("...."+ message.getText());
       producer.send(message);
 
     } catch (JMSException e) {
