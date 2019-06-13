@@ -1,8 +1,8 @@
-package com.rflpazini.rogue.entrypoint;
+package com.rflpazini.rogue.app.entrypoint;
 
-import com.rflpazini.rogue.dataprovider.model.Account;
-import com.rflpazini.rogue.dataprovider.model.Money;
-import com.rflpazini.rogue.usecase.AccountService;
+import com.rflpazini.rogue.app.dataprovider.model.Money;
+import com.rflpazini.rogue.app.dataprovider.model.Account;
+import com.rflpazini.rogue.domain.usecase.AccountService;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.ws.rs.Consumes;

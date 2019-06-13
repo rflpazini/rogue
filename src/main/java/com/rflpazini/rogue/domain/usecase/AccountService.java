@@ -1,8 +1,8 @@
-package com.rflpazini.rogue.usecase;
+package com.rflpazini.rogue.domain.usecase;
 
-import com.rflpazini.rogue.dataprovider.impl.CustomerRepository;
-import com.rflpazini.rogue.dataprovider.model.Account;
-import com.rflpazini.rogue.dataprovider.model.Customer;
+import com.rflpazini.rogue.app.dataprovider.impl.CustomerRepository;
+import com.rflpazini.rogue.app.dataprovider.model.Account;
+import com.rflpazini.rogue.app.dataprovider.model.Customer;
 import javax.inject.Inject;
 import javax.ws.rs.BadRequestException;
 

@@ -1,6 +1,6 @@
-package com.rflpazini.rogue.config;
+package com.rflpazini.rogue.app.dataprovider.queue;
 
-import com.rflpazini.rogue.dataprovider.model.Transfer;
+import com.rflpazini.rogue.app.dataprovider.model.Transfer;
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
 import javax.jms.Connection;

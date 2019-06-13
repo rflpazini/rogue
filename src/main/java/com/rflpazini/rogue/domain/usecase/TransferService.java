@@ -1,8 +1,8 @@
-package com.rflpazini.rogue.usecase;
+package com.rflpazini.rogue.domain.usecase;
 
-import com.rflpazini.rogue.config.TransferQueueProducer;
-import com.rflpazini.rogue.dataprovider.impl.TransferRepository;
-import com.rflpazini.rogue.dataprovider.model.Transfer;
+import com.rflpazini.rogue.app.dataprovider.impl.TransferRepository;
+import com.rflpazini.rogue.app.dataprovider.model.Transfer;
+import com.rflpazini.rogue.app.dataprovider.queue.TransferQueueProducer;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -15,10 +15,8 @@ public class TransferService {
 
   @Inject TransferQueueProducer transferQueueProducer;
 
-  public Transfer createTransfer(String id, Transfer entity) {
-    entity.setOriginAccount(id);
-
-    accountService.withdraw(id, entity.getAmount());
+  public Transfer createTransfer(Transfer entity) {
+    accountService.withdraw(entity.getOriginAccount(), entity.getAmount());
 
     return postToQueue(entity);
   }

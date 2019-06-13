@@ -1,7 +1,7 @@
-package com.rflpazini.rogue.entrypoint;
+package com.rflpazini.rogue.app.entrypoint;
 
-import com.rflpazini.rogue.dataprovider.model.Transfer;
-import com.rflpazini.rogue.usecase.TransferService;
+import com.rflpazini.rogue.app.dataprovider.model.Transfer;
+import com.rflpazini.rogue.domain.usecase.TransferService;
 import java.net.URI;
 import java.net.URISyntaxException;
 import javax.inject.Inject;
@@ -35,13 +35,12 @@ public class TransferController {
   }
 
   @POST
-  @Path("/{id}/transfer")
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.APPLICATION_JSON)
-  public Response moneyTransfer(Transfer transfer, @PathParam("id") String accountId)
+  public Response moneyTransfer(Transfer transfer)
       throws URISyntaxException {
 
-    Transfer newTransfer = service.createTransfer(accountId, transfer);
+    Transfer newTransfer = service.createTransfer(transfer);
 
     URI location = new URI("http://localhost:8181/rogue/v1/transfer/" + newTransfer.getId());
     return Response.created(location).build();

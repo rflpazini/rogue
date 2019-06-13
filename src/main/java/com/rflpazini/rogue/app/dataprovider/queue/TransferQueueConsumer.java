@@ -1,7 +1,7 @@
-package com.rflpazini.rogue.config;
+package com.rflpazini.rogue.app.dataprovider.queue;
 
-import com.rflpazini.rogue.dataprovider.model.Transfer;
-import com.rflpazini.rogue.usecase.TransferService;
+import com.rflpazini.rogue.app.dataprovider.model.Transfer;
+import com.rflpazini.rogue.domain.usecase.TransferService;
 import javax.ejb.MessageDriven;
 import javax.inject.Inject;
 import javax.jms.JMSException;

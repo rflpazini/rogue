@@ -1,7 +1,7 @@
-package com.rflpazini.rogue.dataprovider;
+package com.rflpazini.rogue.app.dataprovider;
 
-import com.rflpazini.rogue.dataprovider.model.Customer;
-import com.rflpazini.rogue.dataprovider.model.Transfer;
+import com.rflpazini.rogue.app.dataprovider.model.Transfer;
+import com.rflpazini.rogue.app.dataprovider.model.Customer;
 import java.util.Hashtable;
 import java.util.UUID;
 

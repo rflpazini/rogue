@@ -1,7 +1,7 @@
-package com.rflpazini.rogue.entrypoint;
+package com.rflpazini.rogue.app.entrypoint;
 
-import com.rflpazini.rogue.dataprovider.model.Customer;
-import com.rflpazini.rogue.usecase.CustomerService;
+import com.rflpazini.rogue.app.dataprovider.model.Customer;
+import com.rflpazini.rogue.domain.usecase.CustomerService;
 import java.net.URI;
 import java.net.URISyntaxException;
 import javax.inject.Inject;

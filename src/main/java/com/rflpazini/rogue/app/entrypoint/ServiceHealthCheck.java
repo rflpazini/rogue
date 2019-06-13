@@ -1,4 +1,4 @@
-package com.rflpazini.rogue.entrypoint;
+package com.rflpazini.rogue.app.entrypoint;
 
 import javax.enterprise.context.ApplicationScoped;
 import org.eclipse.microprofile.health.Health;

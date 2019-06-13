@@ -1,8 +1,8 @@
-package com.rflpazini.rogue.dataprovider.impl;
+package com.rflpazini.rogue.app.dataprovider.impl;
 
-import com.rflpazini.rogue.dataprovider.CrudPattern;
-import com.rflpazini.rogue.dataprovider.DataBase;
-import com.rflpazini.rogue.dataprovider.model.Customer;
+import com.rflpazini.rogue.app.dataprovider.CrudPattern;
+import com.rflpazini.rogue.app.dataprovider.DataBase;
+import com.rflpazini.rogue.app.dataprovider.model.Customer;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Hashtable;

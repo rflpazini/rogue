@@ -1,7 +1,7 @@
-package com.rflpazini.rogue.usecase;
+package com.rflpazini.rogue.domain.usecase;
 
-import com.rflpazini.rogue.dataprovider.impl.CustomerRepository;
-import com.rflpazini.rogue.dataprovider.model.Customer;
+import com.rflpazini.rogue.app.dataprovider.impl.CustomerRepository;
+import com.rflpazini.rogue.app.dataprovider.model.Customer;
 import java.util.List;
 import javax.inject.Inject;
 
