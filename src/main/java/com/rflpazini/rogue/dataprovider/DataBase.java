@@ -1,23 +1,26 @@
 package com.rflpazini.rogue.dataprovider;
 
-import com.rflpazini.rogue.dataprovider.model.*;
+import com.rflpazini.rogue.dataprovider.model.Customer;
+import com.rflpazini.rogue.dataprovider.model.Transfer;
 import java.util.Hashtable;
 import java.util.UUID;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public enum DataBase {
   INSTANCE;
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(DataBase.class);
-
-  private final Hashtable<UUID, UserModel> user;
+  private final Hashtable<UUID, Customer> user;
+  private final Hashtable<UUID, Transfer> transfer;
 
   private DataBase() {
     user = new Hashtable<>();
+    transfer = new Hashtable<>();
   }
 
-  public Hashtable user(){
+  public Hashtable user() {
     return user;
+  }
+
+  public Hashtable transfer() {
+    return transfer;
   }
 }

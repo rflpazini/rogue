@@ -9,7 +9,7 @@ public interface CrudPattern<T> {
 
   T delete(T entity);
 
-  T finbById(String id);
+  T findById(String id);
 
   List<T> findAll();
 }
