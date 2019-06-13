@@ -1,4 +1,4 @@
-package com.rflpazini.rogue.dataprovider;
+package com.rflpazini.rogue.domain.dataprovider;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ public interface CrudPattern<T> {
 
   T delete(T entity);
 
-  T finbById(String id);
+  T findById(String id);
 
   List<T> findAll();
 }

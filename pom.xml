@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.rflpazini</groupId>
   <artifactId>rogue</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
+
   <properties>
     <openliberty.maven.version>2.2</openliberty.maven.version>
     <failOnMissingWebXml>false</failOnMissingWebXml>
     <openliberty.version>RELEASE</openliberty.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <log.level>DEBUG</log.level>
   </properties>
   <dependencies>
     <dependency>
@@ -27,16 +31,35 @@
       <version>1.18.8</version>
       <scope>provided</scope>
     </dependency>
+
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.26</version>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>8.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!--TESTS-->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>io.swagger</groupId>
-      <artifactId>swagger-core</artifactId>
-      <version>1.5.22</version>
+      <groupId>org.jboss.arquillian.junit</groupId>
+      <artifactId>arquillian-junit-container</artifactId>
+      <version>1.4.1.Final</version>
+      <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.jboss.arquillian.container</groupId>
+      <artifactId>undertow-embedded</artifactId>
+      <version>1.0.0.Alpha2</version>
+      <scope>test</scope>
+    </dependency>
+
+
   </dependencies>
   <build>
     <finalName>${project.artifactId}</finalName>

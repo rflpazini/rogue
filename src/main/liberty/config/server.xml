@@ -3,6 +3,7 @@
 
     <featureManager>
         <feature>microProfile-2.2</feature>
+        <feature>javaee-8.0</feature>
     </featureManager>
 
     <httpEndpoint id="defaultHttpEndpoint"
@@ -11,7 +12,7 @@
 
     <application location="${project.build.directory}/${project.build.finalName}.war"/>
 
-    <logging traceSpecification="${log.name}.*=${log.level}"/>
+    <logging traceSpecification="DEBUG"/>
 
     <!-- This is the keystore that will be used by SSL and by JWT. -->
     <keyStore id="defaultKeyStore" location="public.jks" type="JKS" password="atbash" />
@@ -19,5 +20,25 @@
 
     <!-- The MP JWT configuration that injects the caller's JWT into a ResourceScoped bean for inspection. -->
     <mpJwt id="jwtUserConsumer" keyName="theKeyId" audiences="targetService" issuer="${jwt.issuer}"/>
+
+    <messagingEngine>
+        <queue id="TRANSFER_QUEUE" />
+    </messagingEngine>
+
+    <jmsQueueConnectionFactory jndiName="jms/JmsFactory">
+        <properties.wasJms remoteServerAddress="localhost:7276:BootStrapBasicMessaging" />
+    </jmsQueueConnectionFactory>
+
+    <jmsQueue id="simpleJmsQueue" jndiName="jms/JmsQueue">
+        <properties.wasJms queueName="TRANSFER_QUEUE"/>
+    </jmsQueue>
+
+    <jmsActivationSpec id="rogue/TransferQueueConsumer">
+    <properties.wasJms
+      destinationRef="simpleJmsQueue"
+      destinationType="javax.jms.Queue"
+      remoteServerAddress="localhost:7276:BootstrapBasicMessaging"/>
+    </jmsActivationSpec>
+
 
 </server>
