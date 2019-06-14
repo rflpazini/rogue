@@ -7,7 +7,7 @@ public interface CrudPattern<T> {
 
   T update(T entity);
 
-  T delete(T entity);
+  T delete(String id);
 
   T findById(String id);
 

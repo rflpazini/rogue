@@ -16,6 +16,7 @@ public class TransferRepository implements CrudPattern<Transfer> {
   @Override
   public Transfer save(Transfer entity) {
     String id = UUID.randomUUID().toString();
+
     entity.setId(id);
     entity.setCreatedAt(LocalDateTime.now());
 
@@ -30,7 +31,7 @@ public class TransferRepository implements CrudPattern<Transfer> {
   }
 
   @Override
-  public Transfer delete(Transfer entity) {
+  public Transfer delete(String id) {
     return null;
   }
 
