@@ -13,11 +13,15 @@ public class CustomerService {
     return repository.findAll();
   }
 
+  public Customer saveCustomer(Customer customer) {
+    return repository.save(customer);
+  }
+
   public Customer findById(String id) {
     return repository.findById(id);
   }
 
-  public Customer saveCustomer(Customer customer) {
-    return repository.save(customer);
+  public Customer deleteCustomer(String id) {
+    return repository.delete(id);
   }
 }

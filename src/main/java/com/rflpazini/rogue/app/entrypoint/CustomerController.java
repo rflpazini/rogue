@@ -6,6 +6,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -40,5 +41,13 @@ public class CustomerController {
 
     URI location = new URI("http://localhost:8181/rogue/v1/customer/" + newCustomer.getAccountId());
     return Response.created(location).build();
+  }
+
+  @DELETE
+  @Path("/{id}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response deleteById(@PathParam("id") String id) {
+    Customer customer = service.deleteCustomer(id);
+    return Response.ok().entity(customer).build();
   }
 }

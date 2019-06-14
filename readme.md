@@ -1,6 +1,6 @@
 # Rogue 
 
-![rogue-wallpaper](https://i.imgur.com/XuHBwBi.png)
+![rogue-wallpaper](https://i.imgur.com/MftN7Ja.png)
 
 ## Introduction
 
