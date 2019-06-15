@@ -27,7 +27,7 @@ If you want to make your life easier, you should import Insomnia environment fil
 ![insomnia](https://i.imgur.com/aCcfFtq.png)
 
 
-Here's a tutorial from [Insomnia](https://support.insomnia.rest/article/52-importing-and-exporting-data) website for help you when trying to do this.
+Here's a tutorial from [Insomnia](https://support.insomnia.rest/article/52-importing-and-exporting-data) website to help you when trying to do this.
 
 
 ## License
