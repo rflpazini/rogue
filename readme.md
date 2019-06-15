@@ -20,13 +20,16 @@ To launch the test page, open your browser at the following URL
 
     http://localhost:8181/rogue/index.html
 
+### Insomnia REST client 
+
+If you want to make your life easier, you should import Insomnia environment file that is in resources folder and you will be able to test all endpoints of Rogue.
+
+![insomnia](https://i.imgur.com/aCcfFtq.png)
 
 
+Here's a tutorial from [Insomnia](https://support.insomnia.rest/article/52-importing-and-exporting-data) website for help you when trying to do this.
 
 
+## License
 
-
-
-
-
-
+[MIT License](http://rflpazini.mit-license.org) :copyright: Rafael Pazini
