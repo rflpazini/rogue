@@ -23,7 +23,6 @@ public class TransferQueueConsumer implements MessageListener {
 
     try {
       String incomingText = textMessage.getText();
-      System.out.println("-- a new message arrived: " + incomingText);
 
       Jsonb jsonb = JsonbBuilder.create();
 
