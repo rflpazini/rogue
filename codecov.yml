@@ -9,11 +9,11 @@ coverage:
     patch: # minimum coverage needed based only on the new code introduced on the PR
       default: off
       pr_coverage:
-        target: 50%
+        target: 60%
     project:
       default: off
       minimum: # minimum target of coverage needed to pass the check
-        target: 50%
+        target: 60%
       decrement: # maximum decrement of coverage allowed
         target: auto
         threshold: 0.2%
